@@ -16,16 +16,17 @@ def main(win):
 			key = None
 		if key == " ": # of we got a space then break
 			badInput = False
-			while badInput:
-				command = raw_input("What would you like to do? Create? Delete? Start? ")
-				if command.lower() != "create" && command.lower() != "delete" && command.lower() != "start":
-					badInput = True
-			if command.lower() == "create"
-				createUser()
-			if command.lower() == "delete"
-				deleteUser()
-			if command.lower() == "start"
-				curses.wrapper(main)
+			command = raw_input("What would you like to do? Create? Delete? Start? ")
+			#while badInput:
+			#	command = raw_input("What would you like to do? Create? Delete? Start? ")
+			#	if command.lower() != "create" && command.lower() != "delete" && command.lower() != "start":
+			#		badInput = True
+			#if command.lower() == "create"
+			#	createUser()
+			#if command.lower() == "delete"
+			#	deleteUser()
+			#if command.lower() == "start"
+			#	curses.wrapper(main)
 
 
 
