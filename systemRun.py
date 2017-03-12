@@ -1,3 +1,22 @@
+#!/usr/bin/env python
+import curses
+
+def main(win):
+	win.nodelay(True) # make getkey() not wait
+	x = 0
+	while True:
+		#just to show that the loop runs, print a counter
+		#win.clear()
+		win.addstr(0,0,str(x))
+		x += 1
+		
+		try:
+			key = win.getkey()
+		except: # in no delay mode getkey raise and exeption if no key is press 
+			key = None
+		if key == " ": # of we got a space then break
+			break
+
 def createUser():
 	name = input("Please enter a username ")
 	mac = input("Please enter a device MAC address ")
@@ -36,10 +55,4 @@ def checkUser(user):
 				return True
 		return False
 
-
-
-
-checkUser("Pip")
-checkUser("mike")
-deleteUser()
-createUser()
+curses.wrapper(main)
