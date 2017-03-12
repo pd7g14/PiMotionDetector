@@ -15,18 +15,23 @@ def main(win):
 		except: # in no delay mode getkey raise and exeption if no key is press 
 			key = None
 		if key == " ": # of we got a space then break
-			badInput = False
-			command = raw_input("What would you like to do? Create? Delete? Start? ")
-			#while badInput:
-			#	command = raw_input("What would you like to do? Create? Delete? Start? ")
-			#	if command.lower() != "create" && command.lower() != "delete" && command.lower() != "start":
-			#		badInput = True
-			#if command.lower() == "create"
-			#	createUser()
-			#if command.lower() == "delete"
-			#	deleteUser()
-			#if command.lower() == "start"
-			#	curses.wrapper(main)
+			badInput = True
+			while True:
+				try:
+					command = raw_input("What would you like to do? Create? Delete? Start? ")
+					if command.lower() != "create" && command.lower() != "delete" && command.lower() != "start":
+						badInput = True
+				except badInput:
+					print("Sorry I don't understand that")
+					continue
+				else:
+					break
+			if command.lower() == "create"
+				createUser()
+			if command.lower() == "delete"
+				deleteUser()
+			if command.lower() == "start"
+				curses.wrapper(main)
 
 
 
