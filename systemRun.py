@@ -19,7 +19,7 @@ def main(win):
 			while True:
 				try:
 					command = raw_input("What would you like to do? Create? Delete? Start? ")
-					if command.lower() != "create" && command.lower() != "delete" && command.lower() != "start":
+					if command.lower() != "create" and command.lower() != "delete" and command.lower() != "start":
 						badInput = True
 				except badInput:
 					print("Sorry I don't understand that")
