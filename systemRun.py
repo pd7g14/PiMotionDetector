@@ -18,17 +18,17 @@ def main(win):
 			break
 
 def createUser():
-	name = input("Please enter a username ")
-	mac = input("Please enter a device MAC address ")
+	name = raw_input("Please enter a username ")
+	mac = raw_input("Please enter a device MAC address ")
 	writeLn = name + "|" + mac + "\n"
 	with open("users.txt", "a") as userFile:
 		userFile.write(writeLn)
 
 def deleteUser():
-	user = input("Which user would you like to delete? ")
+	user = raw_input("Which user would you like to delete? ")
 	if checkUser(user):
 		print("We found that user! Are you sure you wish to delete them?")
-		confirm = input("Y/N? ")
+		confirm = raw_input("Y/N? ")
 		if confirm.lower() == "y":
 			f = open("users.txt","r+")
 			d = f.readlines()
