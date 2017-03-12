@@ -15,7 +15,19 @@ def main(win):
 		except: # in no delay mode getkey raise and exeption if no key is press 
 			key = None
 		if key == " ": # of we got a space then break
-			break
+			badInput = False
+			while badInput:
+				command = raw_input("What would you like to do? Create? Delete? Start? ")
+				if command.lower() != "create" && command.lower() != "delete" && command.lower() != "start":
+					badInput = True
+			if command.lower() == "create"
+				createUser()
+			if command.lower() == "delete"
+				deleteUser()
+			if command.lower() == "start"
+				curses.wrapper(main)
+
+
 
 def createUser():
 	name = raw_input("Please enter a username ")
