@@ -26,11 +26,11 @@ def main(win):
 					continue
 				else:
 					break
-			if command.lower() == "create"
+			if command.lower() == "create":
 				createUser()
-			if command.lower() == "delete"
+			if command.lower() == "delete":
 				deleteUser()
-			if command.lower() == "start"
+			if command.lower() == "start":
 				curses.wrapper(main)
 
 
